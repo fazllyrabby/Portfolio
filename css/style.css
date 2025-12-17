@@ -534,25 +534,20 @@ body {
     margin-bottom: 15px;
     padding: 15px;
     border-left: 4px solid var(--main-color);
-    background: #f5f5f5;
+    background: var(--primary-color); /* use variable instead of #f5f5f5 */
     border-radius: 6px;
     transition: .3s ease;
 }
-
-.education ul li:hover {
-    transform: translateX(10px);
-}
-
 .education h4 {
     font-size: 20px;
     font-weight: 600;
-    color: var(--secondary-color);
+    color: var(--secondary-color); /* adapts to dark mode */
 }
-
 .education p {
     font-size: 16px;
-    color: #555;
+    color: var(--secondary-color); /* adapts to dark mode */
 }
+
 
 
 /* Skills Section */
@@ -574,12 +569,24 @@ body {
 
 .skill-box {
     flex: 1;
-    background: #f5f5f5;
+    background: var(--primary-color); /* use variable */
     padding: 30px;
     border-radius: 10px;
     text-align: center;
-    transition: .3s;
+    transition: .3s ease;
+    border: 2px solid var(--main-color); /* optional for contrast */
 }
+.skill-box h3 {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: var(--secondary-color); /* adapts to dark mode */
+}
+.skill-box p {
+    font-size: 14px;
+    color: var(--secondary-color); /* adapts to dark mode */
+}
+
 
 .skill-box:hover {
     transform: translateY(-10px);
