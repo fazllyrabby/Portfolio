@@ -103,6 +103,7 @@ body {
     width: 100%;
     height: 2px;
     background: #fff;
+    
 }
 
 
@@ -126,7 +127,7 @@ body {
 .home {
 
     width: 100%;
-    height: 100vh;
+    height: 102vh;
     display: flex;
     align-items: center;
     padding: 60px 7%;
@@ -480,7 +481,7 @@ body {
 .heading {
     text-align: center;
     font-size: 40px;
-    margin-bottom: 40px;
+    margin-bottom: 15px;
     color: var(--secondary-color);
 }
 
@@ -490,14 +491,18 @@ body {
 
 /* About Section */
 .about {
+    height: 100vh;
+    width: 100%;
+    margin-top: 40px;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 80px 7%;
+    padding:20px 7%;
 }
 
 .about-content {
     max-width: 600px;
+    
 }
 
 .about-content p {
@@ -552,14 +557,19 @@ body {
 
 /* Skills Section */
 .skills {
-    padding: 80px 7%;
+    height: 100vh;
+    width: 100%;
+    padding: 40px 7%;
     background: var(--primary-color);
 }
 
 .skills-container {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
     gap: 30px;
-    justify-content: center;
+    justify-content: center; 
+
+   
 }
 
 .skill-box {
@@ -588,18 +598,29 @@ body {
 
 .portfolio-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
+    grid-template-columns: repeat(3, 1fr); /* 3 columns */
+    gap: 30px; /* spacing between boxes */
+    max-width: 1200px;
+    margin: auto;
 }
 
 .portfolio-box {
     position: relative;
     overflow: hidden;
-    border-radius: 10px;
+    border-radius: 12px;
+    min-height: 300px; /* make boxes larger */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    transition: transform 0.3s ease;
+}
+
+.portfolio-box:hover {
+    transform: scale(1.05); /* subtle zoom effect */
 }
 
 .portfolio-box img {
     width: 100%;
+    height: 100%;
+    object-fit: cover; /* ensures image fills box */
     display: block;
 }
 
@@ -609,7 +630,7 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(117, 78, 249, 0.9);
+    background: rgba(117, 78, 249, 0.9); /* main color overlay */
     color: #fff;
     display: flex;
     flex-direction: column;
@@ -617,14 +638,25 @@ body {
     align-items: center;
     transform: translateY(100%);
     transition: .5s ease;
+    text-align: center;
+    padding: 20px;
 }
 
 .portfolio-box:hover .portfolio-layer {
     transform: translateY(0);
 }
 
+.portfolio-layer h4 {
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+.portfolio-layer p {
+    font-size: 16px;
+    margin-bottom: 15px;
+}
+
 .portfolio-layer a {
-    margin-top: 10px;
     color: #fff;
     font-size: 24px;
 }
