@@ -35,15 +35,17 @@ html {
 /* Rotation control variables */
 :root {
     --profession-count: 5;
-    --profession-rotation-duration: 13s; /* change to speed up/slow down */
-    --profession-rotation-timing: linear; /* 'linear' for smooth, or 'steps(5,end)' for stepped jumps */
+    --profession-rotation-duration: 13s;
+    /* change to speed up/slow down */
+    --profession-rotation-timing: linear;
+    /* 'linear' for smooth, or 'steps(5,end)' for stepped jumps */
     --profession-rotation-iteration: infinite;
     --profession-rotation-delay: 2.5s;
 }
 
-.dark-mode{
-    --primary-color:#0b061f;
-    --secondary-color:#fff;
+.dark-mode {
+    --primary-color: #0b061f;
+    --secondary-color: #fff;
 }
 
 
@@ -59,8 +61,9 @@ body {
     top: 0;
     left: 0;
     width: 100%;
-    padding: 10px 5% ;
-    background-color: var(--main-color); /* main color background */
+    padding: 10px 5%;
+    background-color: var(--main-color);
+    /* main color background */
     display: flex;
     align-items: center;
     z-index: 100;
@@ -70,33 +73,28 @@ body {
 /* Logo inside navbar */
 .logo {
     font-size: 25px;
-    color: #fff;
-    text-decoration: none; /* white text on purple background */
+    color:#fff;
+    text-decoration: none;
+    font-weight: 600;
     cursor: default;
     margin-right: auto;
     opacity: 0;
     animation: slideRight 1s ease forwards;
 }
 
-/* Navbar links */
 .navbar a {
     position: relative;
     display: inline-block;
     font-size: 18px;
-    color: #fff; /* white text */
+    color: #fff;
     text-decoration: none;
     font-weight: 500;
     margin-right: 35px;
+    opacity: 0;
     animation: slideLeft 1s ease forwards;
     animation-delay: calc(.2s * var(--i));
 }
 
-/* Hover effect */
-.navbar a:hover {
-    color: #ffd700; /* gold highlight on hover */
-}
-
-/* Active link underline */
 .navbar a.active::before {
     content: '';
     position: absolute;
@@ -181,7 +179,7 @@ body {
     border: 2px solid var(--main-color);
     border-radius: 50%;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 2);
-    
+
     font-size: 20px;
     color: var(--main-color);
     text-decoration: none;
@@ -194,12 +192,13 @@ body {
 
 }
 
-.social-media a:hover{
+.social-media a:hover {
 
     background: var(--main-color);
-   color: #fff;
+    color: #fff;
 }
-.btn{
+
+.btn {
 
     display: inline-block;
     padding: 12px 28px;
@@ -219,13 +218,13 @@ body {
 
 }
 
-.btn:hover{
+.btn:hover {
     background: transparent;
     color: var(--main-color);
     border-color: var(--main-color);
 }
 
-.home .profession-container{
+.home .profession-container {
 
     position: absolute;
     top: 50%;
@@ -234,16 +233,17 @@ body {
     width: 768px;
     height: 768px;
     overflow: hidden;
-    
+
 
 }
-.profession-container .profession-box{
+
+.profession-container .profession-box {
 
     position: absolute;
     top: 0;
     right: 0;
     width: 100%;
-    height: 100%; 
+    height: 100%;
     border-radius: 50%;
     display: flex;
     justify-content: center;
@@ -252,9 +252,10 @@ body {
     animation: slideLeft 1s ease forwards, professionRotate var(--profession-rotation-duration) var(--profession-rotation-timing) var(--profession-rotation-iteration);
     animation-delay: 1.5s, var(--profession-rotation-delay);
 }
-.profession-box .profession{
 
-    position:absolute;
+.profession-box .profession {
+
+    position: absolute;
     left: 0;
     transform-origin: 384px;
     transform: rotate(calc(360deg/5 * var(--i)));
@@ -262,13 +263,13 @@ body {
     flex-direction: column;
     align-items: center;
     color: var(--main-color);
-    background:var(--primary-color);
+    background: var(--primary-color);
     padding: 13px 0;
 
-    
+
 }
 
-.profession-box .profession:nth-child(1) i{
+.profession-box .profession:nth-child(1) i {
 
     margin-right: 15px;
 
@@ -278,28 +279,32 @@ body {
     padding-bottom: 15px;
 
 }
+
 .profession-box .profession:nth-child(5) {
     padding-bottom: 15px;
 }
 
-.profession i{
+.profession i {
     font-size: 30px;
 }
-.profession h3{
+
+.profession h3 {
     font-size: 25px;
     line-height: 1;
     font-weight: 600;
 
 }
-.profession-box .circle{
+
+.profession-box .circle {
 
     width: 72%;
     height: 72%;
-    border: 3px solid var(--main-color) ;
+    border: 3px solid var(--main-color);
     border-radius: 50%;
 }
-.profession-container .overlay{
-   
+
+.profession-container .overlay {
+
 
     position: absolute;
     top: 0;
@@ -312,16 +317,17 @@ body {
     border-left: 384px solid transparent;
     opacity: 0;
     animation: slideLeft 1s ease forwards;
-    animation-delay:1.5s 2.5s;
-    
+    animation-delay: 1.5s 2.5s;
+
 
 }
+
 .home-image img {
 
-    position:absolute;
+    position: absolute;
     bottom: 0;
     left: 0;
-    width:110%;
+    width: 110%;
     pointer-events: none;
     opacity: 0;
     animation: slideLeft 1s ease forwards;
@@ -331,74 +337,143 @@ body {
 
 
 
- /*KEYFRAMES ANIMATION*/
- @keyframes slideRight{
-    0%{
+/*KEYFRAMES ANIMATION*/
+@keyframes slideRight {
+    0% {
         opacity: 0;
         transform: translateX(-100px);
 
     }
-    100%{
+
+    100% {
         opacity: 1;
         transform: translateX(0);
 
     }
- }
+}
 
- @keyframes slideLeft{
-    0%{
+@keyframes slideLeft {
+    0% {
         opacity: 0;
         transform: translateX(100px);
 
     }
-    100%{
+
+    100% {
         opacity: 1;
         transform: translateX(0);
 
     }
- }
+}
 
- @keyframes slideTop{
-    0%{
+@keyframes slideTop {
+    0% {
         opacity: 0;
         transform: translateY(100px);
 
     }
-    100%{
+
+    100% {
         opacity: 1;
         transform: translateY(0);
 
     }
- }
-
-@keyframes professionRotate{
-    /* Pause/Hold pattern: each 20% block holds the rotation, with a quick transition to next */
-    0%   { transform: rotate(0deg); }
-    16%  { transform: rotate(0deg); }
-    20%  { transform: rotate(-72deg); }
-    36%  { transform: rotate(-72deg); }
-    40%  { transform: rotate(-144deg); }
-    56%  { transform: rotate(-144deg); }
-    60%  { transform: rotate(-216deg); }
-    76%  { transform: rotate(-216deg); }
-    80%  { transform: rotate(-288deg); }
-    96%  { transform: rotate(-288deg); }
-    100% { transform: rotate(-360deg); }
 }
 
-@keyframes professionContentInverse{
+@keyframes professionRotate {
+
+    /* Pause/Hold pattern: each 20% block holds the rotation, with a quick transition to next */
+    0% {
+        transform: rotate(0deg);
+    }
+
+    16% {
+        transform: rotate(0deg);
+    }
+
+    20% {
+        transform: rotate(-72deg);
+    }
+
+    36% {
+        transform: rotate(-72deg);
+    }
+
+    40% {
+        transform: rotate(-144deg);
+    }
+
+    56% {
+        transform: rotate(-144deg);
+    }
+
+    60% {
+        transform: rotate(-216deg);
+    }
+
+    76% {
+        transform: rotate(-216deg);
+    }
+
+    80% {
+        transform: rotate(-288deg);
+    }
+
+    96% {
+        transform: rotate(-288deg);
+    }
+
+    100% {
+        transform: rotate(-360deg);
+    }
+}
+
+@keyframes professionContentInverse {
+
     /* Counter-rotate so content remains upright during holds */
-    0%   { transform: rotate(0deg); }
-    16%  { transform: rotate(0deg); }
-    20%  { transform: rotate(72deg); }
-    36%  { transform: rotate(72deg); }
-    40%  { transform: rotate(144deg); }
-    56%  { transform: rotate(144deg); }
-    60%  { transform: rotate(216deg); }
-    76%  { transform: rotate(216deg); }
-    80%  { transform: rotate(288deg); }
-    96%  { transform: rotate(288deg); }
-    100% { transform: rotate(360deg); }
+    0% {
+        transform: rotate(0deg);
+    }
+
+    16% {
+        transform: rotate(0deg);
+    }
+
+    20% {
+        transform: rotate(72deg);
+    }
+
+    36% {
+        transform: rotate(72deg);
+    }
+
+    40% {
+        transform: rotate(144deg);
+    }
+
+    56% {
+        transform: rotate(144deg);
+    }
+
+    60% {
+        transform: rotate(216deg);
+    }
+
+    76% {
+        transform: rotate(216deg);
+    }
+
+    80% {
+        transform: rotate(288deg);
+    }
+
+    96% {
+        transform: rotate(288deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
 }
 
 
@@ -408,6 +483,7 @@ body {
     margin-bottom: 40px;
     color: var(--secondary-color);
 }
+
 .heading span {
     color: var(--main-color);
 }
@@ -419,29 +495,36 @@ body {
     justify-content: space-between;
     padding: 80px 7%;
 }
+
 .about-content {
     max-width: 600px;
 }
+
 .about-content p {
     margin: 20px 0;
     font-size: 16px;
 }
+
 .about-image img {
     width: 650px;
     border-radius: 10px;
 }
+
 /* Education Part inside About */
 .education {
     margin-top: 30px;
 }
+
 .education .sub-heading {
     font-size: 28px;
     color: var(--main-color);
     margin-bottom: 15px;
 }
+
 .education ul {
     list-style: none;
 }
+
 .education ul li {
     margin-bottom: 15px;
     padding: 15px;
@@ -450,14 +533,17 @@ body {
     border-radius: 6px;
     transition: .3s ease;
 }
+
 .education ul li:hover {
     transform: translateX(10px);
 }
+
 .education h4 {
     font-size: 20px;
     font-weight: 600;
     color: var(--secondary-color);
 }
+
 .education p {
     font-size: 16px;
     color: #555;
@@ -469,11 +555,13 @@ body {
     padding: 80px 7%;
     background: var(--primary-color);
 }
+
 .skills-container {
     display: flex;
     gap: 30px;
     justify-content: center;
 }
+
 .skill-box {
     flex: 1;
     background: #f5f5f5;
@@ -482,9 +570,11 @@ body {
     text-align: center;
     transition: .3s;
 }
+
 .skill-box:hover {
     transform: translateY(-10px);
 }
+
 .skill-box i {
     font-size: 40px;
     color: var(--main-color);
@@ -495,20 +585,24 @@ body {
 .portfolio {
     padding: 80px 7%;
 }
+
 .portfolio-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 20px;
 }
+
 .portfolio-box {
     position: relative;
     overflow: hidden;
     border-radius: 10px;
 }
+
 .portfolio-box img {
     width: 100%;
     display: block;
 }
+
 .portfolio-layer {
     position: absolute;
     bottom: 0;
@@ -524,9 +618,11 @@ body {
     transform: translateY(100%);
     transition: .5s ease;
 }
+
 .portfolio-box:hover .portfolio-layer {
     transform: translateY(0);
 }
+
 .portfolio-layer a {
     margin-top: 10px;
     color: #fff;
@@ -538,16 +634,19 @@ body {
     padding: 80px 7%;
     background: var(--primary-color);
 }
+
 .contact form {
     max-width: 600px;
     margin: auto;
     text-align: center;
 }
+
 .contact .input-box {
     display: flex;
     justify-content: space-between;
     margin-bottom: 20px;
 }
+
 .contact .input-box input,
 .contact textarea {
     width: 48%;
@@ -556,6 +655,7 @@ body {
     border-radius: 6px;
     font-size: 16px;
 }
+
 .contact textarea {
     width: 100%;
     resize: none;
